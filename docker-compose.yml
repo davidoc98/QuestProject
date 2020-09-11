@@ -2,38 +2,31 @@ version: "3.5"
 
 services:
 
-<<<<<<< HEAD
-=======
-
->>>>>>> eb30c06965e72fb23a4d1baf9d637b7e6c1a8bcc
   php:
     build:
       context: php
     ports:
-<<<<<<< HEAD
-      - 127.0.0.1:80:80
-=======
     - 127.0.0.1:80:80
->>>>>>> eb30c06965e72fb23a4d1baf9d637b7e6c1a8bcc
     volumes:
-      - ./app:/var/www/html
+    - ./QP:/var/www/html
 
   mardiadb:
     image: mariadb:10.4
     ports:
-      - 127.0.0.1:3306:3306
+    - 127.0.0.1:3306:3306
     environment:
+      MYSQL_HOST: mysql
       MYSQL_ROOT_PASSWORD: rootroot
-      MYSQL_DATABASE: testdb
+      MYSQL_DATABASE: QP
       MYSQL_USER: test_user
       MYSQL_PASSWORD: test_pass
     volumes:
-      - ./databases/mariadb:/var/lib/mysql
+    - ./databases/mariadb:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     ports:
-      - 127.0.0.1:8080:80
+    - 127.0.0.1:8080:80
     environment:
       PMA_HOST: mardiadb
       PMA_USER: test_user
