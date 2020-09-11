@@ -2,11 +2,19 @@ version: "3.5"
 
 services:
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> eb30c06965e72fb23a4d1baf9d637b7e6c1a8bcc
   php:
     build:
       context: php
     ports:
+<<<<<<< HEAD
       - 127.0.0.1:80:80
+=======
+    - 127.0.0.1:80:80
+>>>>>>> eb30c06965e72fb23a4d1baf9d637b7e6c1a8bcc
     volumes:
       - ./app:/var/www/html
 
