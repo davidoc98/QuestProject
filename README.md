@@ -1,4 +1,5 @@
-# Docker based LAMP by David Oganezoff for QP ( ' QuestProject app ' )
+# Docker based LAMP by David Oganezoff
+# for QP ( ' QuestProject app ' )
 
 LAMP is abbreviate of Linux Apache MySQL/MariaDB PHP.
 
