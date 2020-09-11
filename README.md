@@ -1,4 +1,4 @@
-# Docker based LAMP
+# Docker based LAMP by David Oganezoff for QP ( ' QuestProject app ' )
 
 LAMP is abbreviate of Linux Apache MySQL/MariaDB PHP.
 
@@ -33,9 +33,3 @@ apache and bind it into `php` or if you use fpm based container, then write
 config for NGINX and bind it `nginx` container.
 
 ## Links
-
-* [Video on YouTube](https://www.youtube.com/watch?v=he-Rps8VcFk) about Docker LAMP
-composition (on Russian language)
-* [Video on YouTube](https://www.youtube.com/watch?v=qxGlQZIbpHM) about minimal
-version of PHP-FPM and xDebug (on Russian language)
-* [WIKI page](https://en.wikipedia.org/wiki/LAMP_software_bundle) about LAMP
