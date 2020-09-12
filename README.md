@@ -33,4 +33,11 @@ If you don't like `/var/www/html` path, you may create your own config of
 apache and bind it into `php` or if you use fpm based container, then write
 config for NGINX and bind it `nginx` container.
 
-## Links
+
+## On start
+write $ sudo chown -R www-data:www-data * | in QP
+
+## in QP
+if need $ php artisan key:generate | in /var/www/html#
+next write $ php artisan migrate | in /var/www/html#
+
