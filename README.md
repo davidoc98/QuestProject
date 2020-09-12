@@ -32,8 +32,10 @@ config for NGINX and bind it `nginx` container.
 
 
 ## On start
-write $ chown -R www-data:www-data * * | in /var/www/html#
-write if need (for editing) $ sudo chmod -R 777 QP | in QP
+#write $ chown -R www-data:www-data * * | in /var/www/html#
+#write if need (for editing) $ sudo chmod -R 777 QP | in QP
+#write $ sudo chmod -R 777 QP/*
+
 
 ## in QP
 if need $ php artisan key:generate | in /var/www/html#
