@@ -21,5 +21,7 @@ RUN apt-get install -fyqq \
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
  && chmod 755 /usr/bin/composer
+ 
+ RUN  in /var/www/html#
 
 WORKDIR /QP
