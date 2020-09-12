@@ -1,43 +1,12 @@
-# Docker based LAMP by David Oganezoff for QP app
-# QP ( ' QuestProject app ' )
+**Окружение docker & Laravel**  *by* David Oganezoff
+*[ QP ]* **Quest Project *app***
 
-LAMP is abbreviate of Linux Apache MySQL/MariaDB PHP.
-
-That mean complete environment for development on PHP language.
-
-## How to use
-
-Just copy docker-compose.yml from dist example
-
-    cp docker-compose.dist.yml docker-compose.yml
-
-Then build
-
-    docker-compose build
-
-And run composition
-
-    docker-compose up -d
-
-Of course you wan to pass your PHP files to this composition, for this you
-need overwrite strings like:
-
-    - ./app:/var/www/html
-
-To your path with sources, eg `- ../my-sources-in-parent-folder:/var/www/html`.
-
-If you don't like `/var/www/html` path, you may create your own config of
-apache and bind it into `php` or if you use fpm based container, then write
-config for NGINX and bind it `nginx` container.
-
-
-## On start
-#write $ chown -R www-data:www-data * * | in /var/www/html#
-#write if need (for editing) $ sudo chmod -R 777 QP | in QP
-#write $ sudo chmod -R 777 QP/*
-
-
-## in QP
-if need $ php artisan key:generate | in /var/www/html#
-next write $ php artisan migrate | in /var/www/html#
-
+Инструкция по первому запуску:
+1. Собираем:  `$ docker-compose build`
+2. Запускаем: `$ docker-compose up -d`
+3. При необходимости поменять на свою композицию: `- ./app:/var/www/html`
+4. На ваш путь с источниками, например: `- ../my-sources-in-parent-folder:/var/www/html`
+5. В bash, что бы дать разрешения: `$ chown -R www-data:www-data *` -> /var/www/html
+6. Если запрещено редактировать: `$ sudo chmod -R 777 QP/*` -> QP/*
+7. При проблемах с ключом laravel: `$ php artisan key:generate` -> /var/www/html
+8. Мигрировать базу данных: `$ php artisan migrate` -> /var/www/html
