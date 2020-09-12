@@ -1,5 +1,5 @@
-# Docker based LAMP by David Oganezoff
-# for QP ( ' QuestProject app ' )
+# Docker based LAMP by David Oganezoff for QP app
+# QP ( ' QuestProject app ' )
 
 LAMP is abbreviate of Linux Apache MySQL/MariaDB PHP.
 
@@ -18,9 +18,6 @@ Then build
 And run composition
 
     docker-compose up -d
-
-After this you may go to http://localhost and will see the NGINX default
-index page.
 
 Of course you wan to pass your PHP files to this composition, for this you
 need overwrite strings like:
