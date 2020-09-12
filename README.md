@@ -32,7 +32,7 @@ config for NGINX and bind it `nginx` container.
 
 
 ## On start
-write $ sudo chown -R www-data:www-data * | in QP
+write $ chown -R www-data:www-data * * | in /var/www/html#
 write if need (for editing) $ sudo chmod -R 777 QP | in QP
 
 ## in QP
