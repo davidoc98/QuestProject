@@ -1,3 +1,4 @@
+
 FROM php:7.4-apache
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
@@ -8,6 +9,16 @@ RUN docker-php-ext-install \
     pdo_mysql \
     && a2enmod \
     rewrite
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip
 
 RUN apt-get update
 
@@ -21,6 +32,6 @@ RUN apt-get install -fyqq \
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
  && chmod 755 /usr/bin/composer
- 
 
-WORKDIR /QP
+
+WORKDIR ./
