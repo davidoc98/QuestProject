@@ -74,7 +74,7 @@ class Filesystem implements FilesystemInterface
      */
     public function writeStream($path, $resource, array $config = [])
     {
-        if ( ! is_resource($resource) || get_resource_type($resource) !== 'stream') {
+        if ( ! is_resource($resource)) {
             throw new InvalidArgumentException(__METHOD__ . ' expects argument #2 to be a valid resource.');
         }
 
@@ -107,7 +107,7 @@ class Filesystem implements FilesystemInterface
      */
     public function putStream($path, $resource, array $config = [])
     {
-        if ( ! is_resource($resource) || get_resource_type($resource) !== 'stream') {
+        if ( ! is_resource($resource)) {
             throw new InvalidArgumentException(__METHOD__ . ' expects argument #2 to be a valid resource.');
         }
 
@@ -115,7 +115,7 @@ class Filesystem implements FilesystemInterface
         $config = $this->prepareConfig($config);
         Util::rewindStream($resource);
 
-        if ( ! $this->getAdapter() instanceof CanOverwriteFiles && $this->has($path)) {
+        if ( ! $this->getAdapter() instanceof CanOverwriteFiles &&$this->has($path)) {
             return (bool) $this->getAdapter()->updateStream($path, $resource, $config);
         }
 
@@ -158,7 +158,7 @@ class Filesystem implements FilesystemInterface
      */
     public function updateStream($path, $resource, array $config = [])
     {
-        if ( ! is_resource($resource) || get_resource_type($resource) !== 'stream') {
+        if ( ! is_resource($resource)) {
             throw new InvalidArgumentException(__METHOD__ . ' expects argument #2 to be a valid resource.');
         }
 
@@ -270,8 +270,7 @@ class Filesystem implements FilesystemInterface
         $directory = Util::normalizePath($directory);
         $contents = $this->getAdapter()->listContents($directory, $recursive);
 
-        return (new ContentListingFormatter($directory, $recursive, $this->config->get('case_sensitive', true)))
-            ->formatListing($contents);
+        return (new ContentListingFormatter($directory, $recursive))->formatListing($contents);
     }
 
     /**
@@ -301,7 +300,7 @@ class Filesystem implements FilesystemInterface
             return false;
         }
 
-        return (int) $object['timestamp'];
+        return $object['timestamp'];
     }
 
     /**
@@ -365,7 +364,7 @@ class Filesystem implements FilesystemInterface
 
         if ( ! $handler) {
             $metadata = $this->getMetadata($path);
-            $handler = ($metadata && $metadata['type'] === 'file') ? new File($this, $path) : new Directory($this, $path);
+            $handler = $metadata['type'] === 'file' ? new File($this, $path) : new Directory($this, $path);
         }
 
         $handler->setPath($path);
