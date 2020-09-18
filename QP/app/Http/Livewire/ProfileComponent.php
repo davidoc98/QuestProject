@@ -15,4 +15,10 @@ class ProfileComponent extends Component
         $this->user = Auth::user();
         return view('livewire.profile.component');
     }
+
+    public function store()
+    {
+        $this->user = Auth::user();
+        return view('livewire.profile.component');
+    }
 }

@@ -1,0 +1,65 @@
+@font-face {
+    font-family: Cuprum-regular; /* Гарнитура шрифта */
+    src: url(../fonts/Cuprum-Regular.ttf); /* Путь к файлу со шрифтом */
+}
+body{font-family: Cuprum-regular;}
+
+.application{
+    padding: 20px;
+    padding-top: 70px;
+    background: #F5F6FA;
+    border-radius: 10px;;
+}
+
+
+.profile-avatar{
+    width: 130px;
+    height: 130px;
+    background: grey;
+    margin: 0 auto;
+    border-radius: 999px;
+}
+
+
+.namespace{
+    font-size: 36px;
+    color: #0047CC;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.namespace-name{
+    font-size: 13px;
+}
+
+
+
+.knock{
+    width: 40px;
+    height: 40px;
+    background: black;
+    border-radius: 999px;
+    margin: 0 auto;
+}
+
+
+.quest{
+    margin-top: 10px;
+}
+.quest-image{
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    float: right;
+    border-radius: 10px 10px 40px 10px;
+}
+
+
+
+.input{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 12px 5px rgba(242,242,242,1);
+    -moz-box-shadow: 0px 0px 12px 5px rgba(242,242,242,1);
+    box-shadow: 0px 0px 12px 5px rgba(242,242,242,1);
+}
